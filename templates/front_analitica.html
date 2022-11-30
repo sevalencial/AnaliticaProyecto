@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamantes</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./css_analitica.css') }}">
+</head>
+<body>
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <p>{{pred}}</p>
+                        <h3>Diamantes</h3>
+                        <p>Prediccion precio diamantes con modelo.</p>
+                        <form class="requires-validation" novalidate action="{{ url_for('predict')}}"method="POST">
+    
+                            <div class="col-md-12">
+                                <label for="quilates">Quilates</label>
+                               <input class="form-control" type="text" name="quilates" placeholder="0.2-5.01" required>
+                            </div>
+                            <br>
+
+                            <div class="col-md-12">
+                                <label for="profundidadt">Profundidad</label>
+                               <input class="form-control" type="text" name="profundidadt" placeholder="Profundidad Total" required>
+                            </div>
+                            <br>
+
+                            <div class="col-md-12">
+                                <label for="table">Table</label>
+                               <input class="form-control" id="table" type="text" name="table" placeholder="Ancho de la parte superior" required>
+                            </div>
+                            <br>
+
+                            <div class="col-md-12">
+                                <label for="longitud">Longitud x</label>
+                               <input class="form-control" type="text" name="longitud" placeholder="En mm" required>
+                            </div>
+                            <br>
+
+                            <div class="col-md-12">
+                                <label for="anchura">Anchura y</label>
+                               <input class="form-control" type="text" name="anchura" placeholder="En mm" required>
+                            </div>
+                            <br>
+
+                            <div class="col-md-12">
+                                <label for="profundidad">Profundidad z</label>
+                               <input class="form-control" type="text" name="profundidad" placeholder="En mm" required>
+                            </div>
+                            <br>
+
+                           <div class="col-md-12">
+                            <span>Claridad</span>
+                            <select class="form-select mt-3" name="claridad" required>
+                                  <option selected disabled value="">Seleccionar</option>
+                                  <option value="1">I1</option>
+                                  <option value="2">IF</option>
+                                  <option value="3">SI1</option>
+                                  <option value="4">SI2</option>
+                                  <option value="5">VS1</option>
+                                  <option value="6">VS2</option>
+                                  <option value="7">VVS1</option>
+                                  <option value="8">VVS</option>
+                           </select>
+                           </div>
+                           <br>
+
+                           <div class="col-md-12">
+                            <span>Color</span>
+                            <select class="form-select mt-3" required name="color" >
+                                  <option selected disabled value="">Seleccionar</option>
+                                  <option value="1">D</option>
+                                  <option value="2">E</option>
+                                  <option value="3">F</option>
+                                  <option value="4">G</option>
+                                  <option value="5">H</option>
+                                  <option value="6">I</option>
+                                  <option value="7">J</option>
+                           </select>
+                           </div>
+                           <br>
+
+                           <div class="col-md-12">
+                            <span>Corte</span
+                                <select class="form-select mt-3" name="corte" required>
+                                      <option selected disabled value="">Seleccionar</option>
+                                      <option value="3">Ideal</option>
+                                      <option value="4">Premium</option>
+                                      <option value="5">Very Good</option>
+                                      <option value="2">Good</option>
+                                      <option value="1">Fair</option>
+                               </select>
+                           </div>
+                           <br>
+
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">Registrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
